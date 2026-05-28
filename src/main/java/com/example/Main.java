@@ -1,13 +1,10 @@
 package com.example;
 
-import com.example.entites.ContaBancaria;
+import com.example.entites.Aluno;
 import com.example.entites.IdadePessoa;
 import com.example.services.Validacoes;
 
 import java.util.Scanner;
-
-import static com.example.services.Validacoes.lerDouble;
-import static com.example.services.Validacoes.lerInteiro;
 
 public class Main {
     public static void main(String[] args) {
@@ -26,6 +23,7 @@ public class Main {
 //        System.out.println("Saldo na conta: " + minhaConta.getSaldo());
 
         // IDADE PESSOA ************************************************************************************************
+        /*
         IdadePessoa eu = null;
         do{
         try{
@@ -58,8 +56,26 @@ public class Main {
                         eu.getIdade(),
                         eu.maiorDeIdade() ? "Sim" : "Não"
         );
-
+*/
         // PRODUTO *****************************************************************************************************
+        // ALUNO *******************************************************************************************************
+
+        Aluno aluno = new Aluno();
+
+        System.out.print("Informe o nome do aluno: ");
+        aluno.setNome(sc.nextLine());
+
+        System.out.print("Informe a primeira nota do aluno: ");
+        double primeiraNotaAluno = Validacoes.lerDouble(sc);
+        aluno.adicionaNota(primeiraNotaAluno);
+
+        System.out.print("Informe a segunda nota do aluno: ");
+        double segundaNotaAluno = Validacoes.lerDouble(sc);
+        aluno.adicionaNota(segundaNotaAluno);
+
+        System.out.println("A média do aluno é: " + aluno.mediaNotas());
+        // LIVRO *******************************************************************************************************
+
         sc.close();
     }
     }
