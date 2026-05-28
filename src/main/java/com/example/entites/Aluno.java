@@ -1,6 +1,7 @@
 package com.example.entites;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Aluno {
@@ -17,24 +18,17 @@ public class Aluno {
         this.nome = nome;
     }
 
-    public List<Double> getNotas() {
-        return notas;
-    }
+    public List<Double> getNotas() {return Collections.unmodifiableList(notas); } // só poderá receber a nota, sem alterar
 
     //Adiciona notas na lista
     public void adicionaNota(double nota) {
         this.notas.add(nota);
     }
 
-    public double mediaNotas(){
-        if(notas.isEmpty()){
-            return 0.0;
-        }
-
-        // o stream seria um metodo que nos permite manipular a list, que é algo engessado e genérico
-        //mapToDouble é para especificar a saída que esperamos da nossa lista que  contem Doubles
-        // o Double::doubleValue é para converter o Objeto/Classe Double para um tipo primitivo que o computador consegue entender
-        double soma = notas.stream().mapToDouble(Double::doubleValue).sum();
-        return soma  / notas.size();
+    public double mediaNotas() {
+        return notas.stream()
+                .mapToDouble(nota -> nota) // lambda function que converte o item da lista, que é um Double , para double primitivo
+                .average() // calcula media automaticamente
+                .orElse(0.0); // se estiver vazia, retorna zero
     }
 }
