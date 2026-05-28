@@ -26,6 +26,9 @@ public class Aluno {
 
     //Adiciona notas na lista
     public void adicionaNota(double nota) {
+        if (nota < 0.0 || nota > 10.0){
+            throw new IllegalArgumentException("As notas devem ser de 0.0 a 10.0");
+        }
         this.notas.add(nota);
     }
 
