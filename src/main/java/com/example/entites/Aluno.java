@@ -15,10 +15,14 @@ public class Aluno {
     }
 
     public void setNome(String nome) {
+
+        if (nome == null || nome.trim().isEmpty()){
+            throw new IllegalArgumentException("O nome não pode ser vazio");
+        }
         this.nome = nome;
     }
 
-    public List<Double> getNotas() {return Collections.unmodifiableList(notas); } // só poderá receber a nota, sem alterar
+    public List<Double> getNotas() {return Collections.unmodifiableList(notas); } // só poderá receber a nota, sem manipulações fora da classe
 
     //Adiciona notas na lista
     public void adicionaNota(double nota) {
