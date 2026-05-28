@@ -6,7 +6,8 @@ import java.util.List;
 public class Aluno {
     private String nome;
     //Boa prática para evitar NullPointerException (quando o programa tenta acessar ou modificar um objeto que não existe ou não foi inicializado na memória)
-    private List<Double> notas = new ArrayList<Double>(); // ao usarmos o new ArrayList, a lista nunca será null
+    private final List<Double> notas = new ArrayList<>(); // ao usarmos o new ArrayList, a lista nunca será null
+    // com o final notas sempre será essa Lista de Doubles
 
     public String getNome() {
         return nome;
