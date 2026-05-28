@@ -1,14 +1,11 @@
 package com.example;
 
-import com.example.entites.Aluno;
-import com.example.entites.IdadePessoa;
-import com.example.entites.Livro;
-import com.example.entites.Produto;
+import com.example.entites.*;
 import com.example.services.Validacoes;
 
 import java.util.Scanner;
 
-import static com.example.services.Validacoes.lerDouble;
+import static com.example.services.Validacoes.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,15 +13,27 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         // CONTA BANCARIA **********************************************************************************************
-//        ContaBancaria minhaConta = new ContaBancaria();
-//        System.out.print("Informe sua conta bancária: ");
-//        minhaConta.setNumeroConta(lerInteiro(sc));
-//        System.out.print("Informe seu saldo (use ',' em vez de '.'): ");
-//        minhaConta.setSaldo(lerDouble(sc));
-//
+        /*
+        ContaBancaria minhaConta = new ContaBancaria();
+        System.out.print("Informe sua conta bancária: ");
+        minhaConta.setNumeroConta(lerInteiro(sc));
+        System.out.print("Informe seu saldo (use ',' em vez de '.'): ");
+        minhaConta.setSaldo(lerDouble(sc));
+        System.out.print("Informe o titular da conta: ");
+        sc.nextLine();
+        minhaConta.setTitular(sc.nextLine());
 //        // Imprimindo informações da conta
-//        System.out.println("Número da conta: " + minhaConta.getNumeroConta());
-//        System.out.println("Saldo na conta: " + minhaConta.getSaldo());
+        System.out.printf(
+                        """
+                        CONTA BANCÁRIA
+
+                        Número da Conta:       %d
+                        Saldo Inicial:         %.2f
+                        Titular:               %s
+                        """, minhaConta.getNumeroConta(), minhaConta.getSaldo(), minhaConta.getTitular()
+        );
+        */
+         
 
         // IDADE PESSOA ************************************************************************************************
         /*
