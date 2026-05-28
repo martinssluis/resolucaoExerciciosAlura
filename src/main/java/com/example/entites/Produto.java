@@ -18,10 +18,18 @@ public class Produto {
     }
 
     public void setPreco(double preco) {
+        if(preco < 0){
+            throw new IllegalArgumentException("Os preços devem ser positivos");
+        }
         this.preco = preco;
     }
 
     public double aplicarDesconto(double desconto){
+        if (desconto < 0){
+            throw new IllegalArgumentException("O desconto deve ser positivo");
+        } else if (desconto > 100) {
+            throw new IllegalArgumentException("O desconto não pode ser maior que 100%");
+        }
         return this.preco - (this.preco * (desconto/100));
     }
 }
