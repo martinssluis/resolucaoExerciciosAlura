@@ -2,6 +2,7 @@ package com.example;
 
 import com.example.entites.Aluno;
 import com.example.entites.IdadePessoa;
+import com.example.entites.Livro;
 import com.example.entites.Produto;
 import com.example.services.Validacoes;
 
@@ -61,6 +62,7 @@ public class Main {
         );
 */
         // PRODUTO *****************************************************************************************************
+        /*
         Produto fone = new Produto();
 
         System.out.print("Informe o nome do produto: ");
@@ -81,6 +83,8 @@ public class Main {
                         """
                 , fone.getNome(), fone.getPreco(), desconto, fone.aplicarDesconto(desconto)
         );
+        */
+
         // ALUNO *******************************************************************************************************
 /*
         Aluno aluno = new Aluno();
@@ -97,8 +101,17 @@ public class Main {
         aluno.adicionaNota(segundaNotaAluno);
 
         System.out.println("A média do aluno é: " + aluno.mediaNotas());
-        // LIVRO *******************************************************************************************************
+
 */
+        // LIVRO *******************************************************************************************************
+
+        Livro coraline = new Livro();
+        System.out.print("Informe o titulo do livro: ");
+        coraline.setTitulo(sc.nextLine());
+        System.out.print("Informe o autor do livro: ");
+        coraline.setAutor(sc.nextLine());
+        coraline.exibirDetalhes();
+
         sc.close();
     }
     }
