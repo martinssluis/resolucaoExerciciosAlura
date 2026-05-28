@@ -2,9 +2,12 @@ package com.example;
 
 import com.example.entites.Aluno;
 import com.example.entites.IdadePessoa;
+import com.example.entites.Produto;
 import com.example.services.Validacoes;
 
 import java.util.Scanner;
+
+import static com.example.services.Validacoes.lerDouble;
 
 public class Main {
     public static void main(String[] args) {
@@ -58,24 +61,44 @@ public class Main {
         );
 */
         // PRODUTO *****************************************************************************************************
-        // ALUNO *******************************************************************************************************
+        Produto fone = new Produto();
 
+        System.out.print("Informe o nome do produto: ");
+        fone.setNome(sc.nextLine());
+        System.out.print("Informe o preço do produto: ");
+        fone.setPreco(lerDouble(sc));
+        System.out.print("Informe a porcentagem do desconto que será aplicado (0 a 100): ");
+        double desconto = Validacoes.lerDouble(sc);
+
+        System.out.printf(
+                        """
+                        PRODUTO
+                        
+                        Nome:                       %s
+                        Preço:                      %.2f
+                        Desconto:                   %.2f%%
+                        Preço com Desconto:         %.2f
+                        """
+                , fone.getNome(), fone.getPreco(), desconto, fone.aplicarDesconto(desconto)
+        );
+        // ALUNO *******************************************************************************************************
+/*
         Aluno aluno = new Aluno();
 
         System.out.print("Informe o nome do aluno: ");
         aluno.setNome(sc.nextLine());
 
         System.out.print("Informe a primeira nota do aluno: ");
-        double primeiraNotaAluno = Validacoes.lerDouble(sc);
+        double primeiraNotaAluno = lerDouble(sc);
         aluno.adicionaNota(primeiraNotaAluno);
 
         System.out.print("Informe a segunda nota do aluno: ");
-        double segundaNotaAluno = Validacoes.lerDouble(sc);
+        double segundaNotaAluno = lerDouble(sc);
         aluno.adicionaNota(segundaNotaAluno);
 
         System.out.println("A média do aluno é: " + aluno.mediaNotas());
         // LIVRO *******************************************************************************************************
-
+*/
         sc.close();
     }
     }
