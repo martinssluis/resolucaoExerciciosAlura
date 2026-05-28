@@ -21,7 +21,7 @@ public class Livro {
     }
 
     public void exibirDetalhes() {
-        System.out.println(String.format(
+        System.out.printf(
                         """
                         ********************************************
                         LIVRO:
@@ -29,6 +29,6 @@ public class Livro {
                         Título:                %s
                         ********************************************
                         """, titulo, autor
-        ));
+        );
     }
 }
