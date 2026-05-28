@@ -23,4 +23,11 @@ public class ContaBancaria {
         this.saldo = saldo;
     }
 
+    public String getTitular() {
+        return titular;
+    }
+
+    public void setTitular(String titular) {
+        this.titular = titular;
+    }
 }
