@@ -3,10 +3,6 @@ package com.example.entites;
 public class ContaBancaria {
     protected double saldo;
 
-    public double getSaldo() {
-        return saldo;
-    }
-
     public double depositar(double valor){
         return saldo += valor;
     }
@@ -15,7 +11,7 @@ public class ContaBancaria {
         return saldo -= valor;
     }
 
-    public double verSaldo(){
+    public double consultarSaldo(){
         return saldo;
     }
 }
