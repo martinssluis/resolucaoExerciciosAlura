@@ -1,4 +1,4 @@
 package com.example.entites;
 
-public class ModeloCarro {
+public class ModeloCarro extends Carro{
 }
