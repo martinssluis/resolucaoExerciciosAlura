@@ -1,4 +1,4 @@
 package com.example.entites;
 
-public class ContaBancaria {
+public class Gato {
 }
