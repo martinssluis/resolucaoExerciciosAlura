@@ -1,9 +1,13 @@
 package com.example.entites;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Carro {
 
     private String nome;
-    private double preco;
+    private Map<Integer,Double> precoPorAno = new HashMap<>();
 
     public String getNome() {
         return nome;
@@ -13,17 +17,35 @@ public class Carro {
         this.nome = nome;
     }
 
-    public double getPreco() {
-        return preco;
+    public double getPrecoPorAno(Integer ano){
+        return precoPorAno.get(ano);
     }
 
-    public void setPreco(double preco) {
-        this.preco = preco;
+    public void setPrecoPorAno(Integer ano, Double preco)
+    {
+        this.precoPorAno.put(ano, preco);
     }
 
-    //TODO: métodos para representar o modelo ao longo de 3 anos
-    //TODO: método para definir o nome do modelo
-    //TODO: preço médio para cada ano
-    //TODO: calcuar e exibir o menor e maior preço
-    //TODO: subclasse ModeloCarro para criar instâncias especificas, utilizando a classe principal para definir e mostrar informações
+
+    public Double precoMedioParaCadaAno(){
+        Double precoTotal = 0.0;
+        for (Double preco : precoPorAno.values()) {precoTotal += preco;}
+        return precoTotal / precoPorAno.size(); }
+
+    public double menorPreco(){
+        return Collections.min(precoPorAno.values());
+    }
+    public double maiorPreco(){
+        return Collections.max(precoPorAno.values());
+    }
+
+    public void exibirInformacoes(){
+        System.out.println("Nome: " + nome);
+        for (Map.Entry<Integer, Double> entry : precoPorAno.entrySet()) {
+            System.out.printf("Ano %d: R$ %.2f%n", entry.getKey(), entry.getValue());
+        }
+        System.out.println("Menor preço: " + menorPreco());
+        System.out.println("Maior preço: " + maiorPreco());
+        System.out.println("Média de preço: " + precoMedioParaCadaAno());
+    }
 }
