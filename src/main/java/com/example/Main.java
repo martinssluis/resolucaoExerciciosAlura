@@ -7,6 +7,7 @@ import com.example.services.Validacoes;
 import java.util.Scanner;
 
 import static com.example.services.Validacoes.lerDouble;
+import static com.example.services.Validacoes.lerInteiro;
 
 public class Main {
     public static void main(String[] args) {
@@ -53,17 +54,31 @@ public class Main {
 //        System.out.println("Saldo de R$" +contaCorrente.consultarSaldo());
 
         // Carro *******************************************************************************************************
-        ModeloCarro carro1 = new ModeloCarro();
-        System.out.print("Qual o modelo do carro?");
-        carro1.setNome(sc.nextLine());
-        for (int i=0;i<3;i++){
-            System.out.println("Qual o ano do carro? ");
-            Integer ano = Validacoes.lerInteiro(sc);
-            System.out.println("Qual o preço do carro nesse ano? ");
-            Double preco = Validacoes.lerDouble(sc);
-            carro1.setPrecoPorAno(ano,preco);
-            carro1.exibirInformacoes();
-        }
+//        ModeloCarro carro1 = new ModeloCarro();
+//        System.out.print("Qual o modelo do carro?");
+//        carro1.setNome(sc.nextLine());
+//        for (int i=0;i<3;i++){
+//            System.out.println("Qual o ano do carro? ");
+//            Integer ano = Validacoes.lerInteiro(sc);
+//            System.out.println("Qual o preço do carro nesse ano? ");
+//            Double preco = Validacoes.lerDouble(sc);
+//            carro1.setPrecoPorAno(ano,preco);
+//            carro1.exibirInformacoes();
+//        }
+
+        // Numeros Primos **********************************************************************************************
+//        VerificadorPrimo numero = new VerificadorPrimo();
+//        System.out.print("Digite um número para vermos se ele é primo: ");
+//        int resposta = lerInteiro(sc);
+//        System.out.println(numero.verificarPrimalidade(resposta));
+//        numero.verificarSeEhPrimo(resposta);
+//        System.out.print("Até qual número deseja listar os primos?");
+//        NumerosPrimos listarPrimos = new NumerosPrimos();
+//        listarPrimos.listarPrimos(lerInteiro(sc));
+
+        GeradorPrimo proximoPrimo = new GeradorPrimo();
+        System.out.print("Informe um número para vermos qual o próximo número primo: ");
+        proximoPrimo.gerarProximoPrimo(lerInteiro(sc));
 
         sc.close();
     }
