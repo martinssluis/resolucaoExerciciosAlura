@@ -2,5 +2,10 @@ package com.example.entites;
 
 public class GeradorPrimo extends NumerosPrimos{
 
-    //TODO: gerarProximoPrimo()
+    public void gerarProximoPrimo(int numero){
+        do{
+            numero ++;
+        }while(!verificarPrimalidade(numero));
+        System.out.print("O próximo número primo é: " + numero);
+    }
 }
