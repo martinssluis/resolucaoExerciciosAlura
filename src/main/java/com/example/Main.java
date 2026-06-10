@@ -13,6 +13,12 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
+        ConversorMoeda dolarPraReal = new ConversorMoeda();
+
+        System.out.print("Passe um valor em dolar para ser convertido em real: ");
+        System.out.print(dolarPraReal.converterDolarParaReal(lerDouble(sc)));
+
+
         sc.close();
     }
     }
