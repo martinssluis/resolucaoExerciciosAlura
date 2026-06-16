@@ -13,11 +13,19 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        ConversorMoeda dolarPraReal = new ConversorMoeda();
+//        ConversorMoeda dolarPraReal = new ConversorMoeda();
+//
+//        System.out.print("Passe um valor em dolar para ser convertido em real: ");
+//        System.out.print(dolarPraReal.converterDolarParaReal(lerDouble(sc)));
 
-        System.out.print("Passe um valor em dolar para ser convertido em real: ");
-        System.out.print(dolarPraReal.converterDolarParaReal(lerDouble(sc)));
 
+        CalculadoraSalaRetangular retangulo = new CalculadoraSalaRetangular();
+        System.out.print("Informe a altura do retangulo: ");
+        retangulo.setAltura(lerDouble(sc));
+        System.out.print("Informe a largura do retandulo: ");
+        retangulo.setLargura(lerDouble(sc));
+        System.out.println("Área do retangulo: " + retangulo.calcularArea());
+        System.out.println("Perímetro do retangulo: " + retangulo.calcularPerimetro());
 
         sc.close();
     }
