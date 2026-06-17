@@ -6,6 +6,7 @@ import com.example.entites.*;
 import java.util.Scanner;
 
 import static com.example.services.Validacoes.lerDouble;
+import static com.example.services.Validacoes.lerInteiro;
 
 public class Main {
     public static void main(String[] args) {
@@ -43,19 +44,37 @@ public class Main {
 //        fahrenheitParaCelsius.fahrenheitParaCelsius();
 
 
-        ProdutoFisico produtoFisico = new ProdutoFisico();
-        System.out.print("Informe o preço original do Produto: ");
-        produtoFisico.setPreco(lerDouble(sc));
-        System.out.print("Informe em Reais o valor do desconto da Black Friday que será aplicado: ");
-        produtoFisico.setDescontoBlackFriday(lerDouble(sc));
-        System.out.println("O preço final do Produto é de: R$" + produtoFisico.calcularPrecoFinal());
+//        ProdutoFisico produtoFisico = new ProdutoFisico();
+//        System.out.print("Informe o preço original do Produto: ");
+//        produtoFisico.setPreco(lerDouble(sc));
+//        System.out.print("Informe em Reais o valor do desconto da Black Friday que será aplicado: ");
+//        produtoFisico.setDescontoBlackFriday(lerDouble(sc));
+//        System.out.println("O preço final do Produto é de: R$" + produtoFisico.calcularPrecoFinal());
+//
+//        Livro livro = new Livro();
+//        System.out.print("Informe o preço do Livro: ");
+//        livro.setPreco(lerDouble(sc));
+//        System.out.print("Informe em Reais o valor da taxa de entrega: ");
+//        livro.setTaxaEntrega(lerDouble(sc));
+//        System.out.print("O preço final do Livro é de: R$" + livro.calcularPrecoFinal());
 
-        Livro livro = new Livro();
-        System.out.print("Informe o preço do Livro: ");
-        livro.setPreco(lerDouble(sc));
-        System.out.print("Informe em Reais o valor da taxa de entrega: ");
-        livro.setTaxaEntrega(lerDouble(sc));
-        System.out.print("O preço final do Livro é de: R$" + livro.calcularPrecoFinal());
+        Produto produto = new Produto();
+        System.out.print("Informe o preço do produto: ");
+        produto.setPreco(lerDouble(sc));
+        System.out.print("Quantos produtos vai levar? ");
+        produto.setQuantidade(lerInteiro(sc));
+        System.out.print("Informe em reais o desconto de primeira compra: ");
+        produto.setDescontoPrimeiraCompra(lerDouble(sc));
+        System.out.println("O preço final do produto é de: R$" + produto.precoTotal());
+
+        Servicos servicos = new Servicos();
+        System.out.print("Informe o preço do serviço: ");
+        servicos.setPreco(lerDouble(sc));
+        System.out.print("Quantos serviços vai fazer conosco? ");
+        servicos.setQuantidade(lerInteiro(sc));
+        System.out.print("Informe em reais o desconto passado pelo vendedor: ");
+        servicos.setDesconto(lerDouble(sc));
+        System.out.print("O preço final do serviço é de: R$" + servicos.precoTotal());
 
         sc.close();
     }
