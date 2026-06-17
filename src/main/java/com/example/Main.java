@@ -28,10 +28,21 @@ public class Main {
 //        System.out.println("Área do retangulo: " + retangulo.calcularArea());
 //        System.out.println("Perímetro do retangulo: " + retangulo.calcularPerimetro());
 
-        TabuadaMultiplicacao numero = new TabuadaMultiplicacao();
-        System.out.print("Informe um número para ver a tabuada até 10 desse número: ");
-        numero.setNumero(lerInteiro(sc));
-        numero.calculartabuada(numero.getNumero());
+//        TabuadaMultiplicacao numero = new TabuadaMultiplicacao();
+//        System.out.print("Informe um número para ver a tabuada até 10 desse número: ");
+//        numero.setNumero(lerInteiro(sc));
+//        numero.calculartabuada(numero.getNumero());
+
+        ConversosTemperaturaPadrao celsiusParaFahrenheit = new ConversosTemperaturaPadrao();
+        System.out.print("Informe uma temperatura em Celsius para converter em Fahrenheit: ");
+        celsiusParaFahrenheit.setTemperatura(lerDouble(sc));
+        celsiusParaFahrenheit.celsiusParaFahrenheit();
+
+        sc.nextLine();
+        ConversosTemperaturaPadrao fahrenheitParaCelsius = new ConversosTemperaturaPadrao();
+        System.out.print("Informe uma temperatura em Fahrenheit para converter em Celsius: ");
+        fahrenheitParaCelsius.setTemperatura(lerDouble(sc));
+        fahrenheitParaCelsius.fahrenheitParaCelsius();
 
         sc.close();
     }
