@@ -2,12 +2,10 @@ package com.example;
 
 
 import com.example.entites.*;
-import com.example.services.Validacoes;
 
 import java.util.Scanner;
 
 import static com.example.services.Validacoes.lerDouble;
-import static com.example.services.Validacoes.lerInteiro;
 
 public class Main {
     public static void main(String[] args) {
@@ -33,16 +31,31 @@ public class Main {
 //        numero.setNumero(lerInteiro(sc));
 //        numero.calculartabuada(numero.getNumero());
 
-        ConversosTemperaturaPadrao celsiusParaFahrenheit = new ConversosTemperaturaPadrao();
-        System.out.print("Informe uma temperatura em Celsius para converter em Fahrenheit: ");
-        celsiusParaFahrenheit.setTemperatura(lerDouble(sc));
-        celsiusParaFahrenheit.celsiusParaFahrenheit();
+//        ConversosTemperaturaPadrao celsiusParaFahrenheit = new ConversosTemperaturaPadrao();
+//        System.out.print("Informe uma temperatura em Celsius para converter em Fahrenheit: ");
+//        celsiusParaFahrenheit.setTemperatura(lerDouble(sc));
+//        celsiusParaFahrenheit.celsiusParaFahrenheit();
+//
+//        sc.nextLine();
+//        ConversosTemperaturaPadrao fahrenheitParaCelsius = new ConversosTemperaturaPadrao();
+//        System.out.print("Informe uma temperatura em Fahrenheit para converter em Celsius: ");
+//        fahrenheitParaCelsius.setTemperatura(lerDouble(sc));
+//        fahrenheitParaCelsius.fahrenheitParaCelsius();
 
-        sc.nextLine();
-        ConversosTemperaturaPadrao fahrenheitParaCelsius = new ConversosTemperaturaPadrao();
-        System.out.print("Informe uma temperatura em Fahrenheit para converter em Celsius: ");
-        fahrenheitParaCelsius.setTemperatura(lerDouble(sc));
-        fahrenheitParaCelsius.fahrenheitParaCelsius();
+
+        ProdutoFisico produtoFisico = new ProdutoFisico();
+        System.out.print("Informe o preço original do Produto: ");
+        produtoFisico.setPreco(lerDouble(sc));
+        System.out.print("Informe em Reais o valor do desconto da Black Friday que será aplicado: ");
+        produtoFisico.setDescontoBlackFriday(lerDouble(sc));
+        System.out.println("O preço final do Produto é de: R$" + produtoFisico.calcularPrecoFinal());
+
+        Livro livro = new Livro();
+        System.out.print("Informe o preço do Livro: ");
+        livro.setPreco(lerDouble(sc));
+        System.out.print("Informe em Reais o valor da taxa de entrega: ");
+        livro.setTaxaEntrega(lerDouble(sc));
+        System.out.print("O preço final do Livro é de: R$" + livro.calcularPrecoFinal());
 
         sc.close();
     }
