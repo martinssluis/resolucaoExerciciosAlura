@@ -2,8 +2,7 @@ package com.example.entities;
 
 public class Audio {
     private String titulo;
-    private int totalReproducoes, totalCurtidas;
-    private double classificacao;
+    private int totalReproducoes, totalCurtidas, classificacao;
 
     public String getTitulo() {
         return titulo;
@@ -21,7 +20,7 @@ public class Audio {
         return totalCurtidas;
     }
 
-    public double getClassificacao() {
+    public int getClassificacao() {
         return classificacao;
     }
 
