@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.entities.MinhasPreferidas;
 import com.example.entities.Musica;
 import com.example.entities.Podcast;
 
@@ -31,5 +32,9 @@ public class Main {
         for (int i = 0; i < 1000; i++) {
             meuPodcast.curte();
         }
+
+        MinhasPreferidas preferidas = new MinhasPreferidas();
+        preferidas.inclui(meuPodcast);
+        preferidas.inclui(minhaMusica);
     }
 }
