@@ -1,8 +1,11 @@
 package com.example;
 
 import com.example.entities.Produto;
+import com.example.entities.ProdutoPerecivel;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,5 +22,9 @@ public class Main {
         System.out.println("O tamanho do meu carrinho de compras é: " + carrinhoDeCompras.size());
         //TODO: recuperar um produto pelo íncide
         System.out.println("Segundo item no  meu carrinho de compras: " + carrinhoDeCompras.get(1));
+
+        ProdutoPerecivel banana = new ProdutoPerecivel("Cacho de banana", 7.99,1);
+        banana.setDataValidade(new Date());
+        System.out.println(banana.toString());
     }
     }
