@@ -8,15 +8,9 @@ public class Main {
     public static void main(String[] args) {
 
         //TODO: criar ArrayList de produtos
-        Produto mouse = new Produto();
-        mouse.setNome("Mouse");
-        mouse.setPreco(65.90);
-        mouse.setQuantidade(2);
+        Produto mouse = new Produto("Mouse", 65.90, 2);
 
-        Produto teclado = new Produto();
-        teclado.setNome("Teclado");
-        teclado.setPreco(120.00);
-        teclado.setQuantidade(1);
+        Produto teclado = new Produto("Teclado", 120.0, 1);
 
         ArrayList<Produto> carrinhoDeCompras = new ArrayList<>();
         carrinhoDeCompras.add(mouse);

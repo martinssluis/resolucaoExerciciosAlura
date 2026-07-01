@@ -8,6 +8,12 @@ public class Produto {
 
     //TODO: construtor que aceite parametros para inicializar os atributos
 
+    public Produto(String nome, double preco, int quantidade) {
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidade = quantidade;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -31,7 +37,7 @@ public class Produto {
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
-    
+
     //TODO: implementar metodo toString para retornar yma representação em texto do objeto
     @Override
     public String toString() {
