@@ -27,6 +27,8 @@ public class Main {
         ArrayList<Titulo> listaTitulos = new ArrayList<>();
         listaTitulos.addAll(List.of(ben10, knd, horaDeAventura, apenasUmShow));
         System.out.println(listaTitulos);
+        Collections.sort(listaTitulos);
+        System.out.println("Lista ordenada de Titulos: " + listaTitulos);
 
     }
     }
