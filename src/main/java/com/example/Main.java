@@ -1,7 +1,10 @@
 package com.example;
 
+import com.example.entity.Titulo;
+
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,6 +19,14 @@ public class Main {
         System.out.println("Lista desordenada: " + listaInteiros);
         Collections.sort(listaInteiros);
         System.out.println("Lista ordenada: " +listaInteiros);
+
+        Titulo ben10 = new Titulo("Ben 10");
+        Titulo knd = new Titulo("KND: Turma do Bairro");
+        Titulo horaDeAventura = new Titulo("Hora de Aventura");
+        Titulo apenasUmShow = new Titulo("Apenas um Show");
+        ArrayList<Titulo> listaTitulos = new ArrayList<>();
+        listaTitulos.addAll(List.of(ben10, knd, horaDeAventura, apenasUmShow));
+        System.out.println(listaTitulos);
 
     }
     }
