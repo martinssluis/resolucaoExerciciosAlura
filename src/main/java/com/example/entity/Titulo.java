@@ -12,6 +12,11 @@ public class Titulo implements Comparable<Titulo>{
     }
 
     @Override
+    public String toString() {
+        return "Titulo: " + this.getNome();
+    }
+
+    @Override
     public int compareTo(@org.jetbrains.annotations.NotNull Titulo outroTitulo) {
         return this.getNome().compareTo(outroTitulo.getNome());
     }
