@@ -4,6 +4,7 @@ import com.example.entity.Titulo;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
@@ -29,6 +30,14 @@ public class Main {
         System.out.println(listaTitulos);
         Collections.sort(listaTitulos);
         System.out.println("Lista ordenada de Titulos: " + listaTitulos);
+
+        //List<Integer> numeros = new ArrayList<>();
+        List<Integer> numeros = new LinkedList<>();
+        numeros.add(1);
+        numeros.add(2);
+        numeros.add(3);
+        System.out.println(numeros);
+
 
     }
     }
