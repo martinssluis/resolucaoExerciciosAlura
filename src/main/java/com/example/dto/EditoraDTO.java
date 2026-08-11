@@ -1,4 +1,3 @@
 package com.example.dto;
 
-public record EditoraDTO() {
-}
+public record EditoraDTO(String nome, String fundacao) {}
