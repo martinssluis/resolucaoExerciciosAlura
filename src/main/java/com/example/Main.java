@@ -1,14 +1,22 @@
 package com.example;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import com.example.entity.Titulo;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.FieldNamingPolicy;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
-        FileWriter arquivo = new FileWriter("arquivo.txt");
-        arquivo.write("Conteúdo a ser gravado no arquivo");
-        arquivo.close();
+        Titulo meuTitulo = new Titulo("Carros", 5);
+        Gson gson = new GsonBuilder()
+                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                .setPrettyPrinting()
+                .create();
+
+        var tituloJson = gson.toJson(meuTitulo);
+
+        System.out.println(tituloJson);
 
     }
     }
