@@ -1,9 +1,6 @@
 package com.example;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -17,11 +14,10 @@ public class Main {
                 new Produto("Mesa", 700.0, "Móveis")
         );
 
-        Map<String, Long> itemsByCategory = produtos.stream()
-                .collect(Collectors.groupingBy(Produto::getCategoria, Collectors.counting()));
-        //String - categoria
-        // Long - quantidade
+        Map<String, Optional<Produto>> maxPriceByCategory = produtos.stream()
+                        .collect(Collectors.groupingBy(Produto::getCategoria,
+                                Collectors.maxBy(Comparator.comparing(Produto::getPreco))));
 
-        System.out.println(itemsByCategory);
+        System.out.println(maxPriceByCategory);
     }
 }
