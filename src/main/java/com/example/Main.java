@@ -17,9 +17,11 @@ public class Main {
                 new Produto("Mesa", 700.0, "Móveis")
         );
 
-        Map<String, List<Produto>> mappedByCategory = produtos.stream()
-                .collect(Collectors.groupingBy(Produto::getCategoria));
+        Map<String, Long> itemsByCategory = produtos.stream()
+                .collect(Collectors.groupingBy(Produto::getCategoria, Collectors.counting()));
+        //String - categoria
+        // Long - quantidade
 
-        System.out.println(mappedByCategory);
+        System.out.println(itemsByCategory);
     }
 }
