@@ -14,10 +14,10 @@ public class Main {
                 new Produto("Mesa", 700.0, "Móveis")
         );
 
-        Map<String, Optional<Produto>> maxPriceByCategory = produtos.stream()
+        Map<String, Double> totalPriceByCategpry = produtos.stream()
                         .collect(Collectors.groupingBy(Produto::getCategoria,
-                                Collectors.maxBy(Comparator.comparing(Produto::getPreco))));
+                                Collectors.summingDouble(Produto::getPreco)));
 
-        System.out.println(maxPriceByCategory);
+        System.out.println(totalPriceByCategpry);
     }
 }
