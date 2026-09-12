@@ -3,6 +3,7 @@ package com.example;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -16,11 +17,9 @@ public class Main {
                 new Produto("Mesa", 700.0, "Móveis")
         );
 
-       List<Produto> menorMil = produtos.stream()
-               .filter(produto -> produto.getPreco() < 1000)
-               .sorted(Comparator.comparing(Produto::getPreco))
-               .collect(Collectors.toList());
+        Map<String, List<Produto>> mappedByCategory = produtos.stream()
+                .collect(Collectors.groupingBy(Produto::getCategoria));
 
-        System.out.println(menorMil);
+        System.out.println(mappedByCategory);
     }
 }
